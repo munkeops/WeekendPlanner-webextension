@@ -1,0 +1,34 @@
+{
+    "manifest_version" : 2,
+    "name":"recommender",
+    "version": "1.0",
+
+    "description": "recommends locations to visit on weekends",
+
+    "background": {
+        "scripts": ["recommender.js"]
+      },
+      "browser_action": {
+        "browser_style": true,
+        "default_popup": "poppup/table_contents.html",
+        "default_icon": {
+          "16": "icon/icon3.jpg"
+          
+        }
+      },
+
+     
+    
+      "icons": {
+        "48": "icon/icon3.jpg"
+       
+      },
+      "content_scripts": [
+        {
+          "matches": ["*://*.mozilla.org/*"],
+          "js": ["recommender.js"]
+        }
+      ]
+
+   
+}
